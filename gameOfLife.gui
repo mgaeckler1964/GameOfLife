@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<gui>
+<forms>
+<form name="LifeGameFORM" style="277807104" width="640" height="462" caption="Conway's Game of Life" id="128" baseClass="OverlappedWindow">
+<child type="FrameChild" name="" caption="" x="0" y="0" width="640" height="40" style="1342308352" bgColor="COLOR_BTNFACE" bg_red="0" bg_green="0" bg_blue="0">
+<layout attachment="1" growWidth="5" />
+<child type="Label" name="" caption="Size (w*h)" x="8" y="16" width="0" height="0" style="1342242827" />
+<child type="EditControl" name="WidthEDIT" caption="128" x="80" y="8" width="80" height="24" style="1350631808" id="129" />
+<child type="EditControl" name="HeightEDIT" caption="128" x="168" y="8" width="80" height="24" style="1350631808" id="130" />
+<child type="PushButton" name="StartBUTTON" caption="Start" x="256" y="8" width="80" height="24" style="1342242816" id="131" />
+<child type="PushButton" name="StopBUTTON" caption="Stop" x="336" y="8" width="80" height="24" style="1342242816" id="132" />
+<child type="Label" name="TimeLABEL" caption="" x="424" y="8" width="72" height="16" style="1342242827" id="133" />
+<child type="Label" name="Time2LABEL" caption="" x="464" y="8" width="80" height="16" style="1342242827" id="134" />
+<child type="Label" name="CountLABEL" caption="" x="504" y="8" width="72" height="16" style="1342242827" id="135" />
+</child>
+<child type="FrameChild" name="LifeArea" caption="" x="0" y="40" width="640" height="424" style="1342308352" id="136">
+<layout attachment="4" growWidth="5" growHeight="5" />
+</child>
+<layoutManager type="AttachmentManager" />
+</form>
+</forms>
+</gui>
