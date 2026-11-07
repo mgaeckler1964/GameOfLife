@@ -111,7 +111,6 @@ class LifeGameWindow : public winlibGUI::LifeGameFORM_form
 	ProcessStatus handleResize( const Size &newSize ) override;
 	ProcessStatus handleErase( Device &hDC ) override;
 	ProcessStatus handleRepaintFrame( const FrameChild *frame ) override;
-	SuccessCode handleClose() override;
 
 	// mouse messages
 	ProcessStatus handleLeftButton( LeftButton leftButton, ModifierFlags modifier, const Point &position ) override;
@@ -213,11 +212,6 @@ ProcessStatus LifeGameWindow::handleCreate()
 {
 	LifeArea->notifyParent();
 	return psPROCESSED;
-}
-
-SuccessCode LifeGameWindow::handleClose()
-{
-	return OverlappedWindow::handleClose();
 }
 
 ProcessStatus LifeGameWindow::handleResize( const Size &newSize )
