@@ -101,8 +101,8 @@ class LifeGameWindow : public winlibGUI::LifeGameFORM_form
 		}
 		if( oldRows != areaHeight || oldCols != areaWidth )
 		{
-			for( int col=0; col<m_area.getNumCols(); ++col )
-				for( int row=0; row<m_area.getNumRows(); ++row )
+			for( int col=0; col<int(m_area.getNumCols()); ++col )
+				for( int row=0; row<int(m_area.getNumRows()); ++row )
 					m_area[col][row] = randomNumber( 100 ) < 30;
 		}
 	}
@@ -282,7 +282,7 @@ ProcessStatus LifeGameWindow::handleLeftButton( LeftButton leftButton, ModifierF
 		mapMousePosition( LifeArea, &area );
 		int col = int( area.x / m_cellWidth );
 		int row = int( area.y / m_cellHeight );
-		if( col >= 0 && row >= 0 && col < m_area.getNumCols() && row<m_area.getNumRows() )
+		if( col >= 0 && row >= 0 && col < int(m_area.getNumCols()) && row<int(m_area.getNumRows()) )
 		{
 			bool &life = m_area[col][row];
 			life = !life;
@@ -331,9 +331,9 @@ void LifeGameWindow::handleTimer()
 	bool				noChange = true;
 
 	gak::Matrix<bool>	currentState = m_area;
-	for( int col=0; col<currentState.getNumCols(); ++col )
+	for( int col=0; col<int(currentState.getNumCols()); ++col )
 	{
-		for( int row=0; row<currentState.getNumRows(); ++row )
+		for( int row=0; row<int(currentState.getNumRows()); ++row )
 		{
 			int numNeighbors = 0;
 
@@ -347,7 +347,7 @@ void LifeGameWindow::handleTimer()
 						// neighbors
 						int colN = col+colO;
 						int rowN = row+rowO;
-						if( colN >= 0 && rowN >= 0 && colN < currentState.getNumCols() && rowN < currentState.getNumRows() && currentState[colN][rowN] )
+						if( colN >= 0 && rowN >= 0 && colN < int(currentState.getNumCols()) && rowN < int(currentState.getNumRows()) && currentState[colN][rowN] )
 							numNeighbors++;
 					}
 				}
